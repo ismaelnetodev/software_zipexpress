@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^m_$q2co!iyiu4#44&fsw#(lt9ks___s=z7k$(clgco@4l4@&0'
+SECRET_KEY = 'django-insecure-r30-pzm0m7j6_zk2j!p2!ncju2@=u@ks_rbhdwy&%1)fxx+i$k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios'
 ]
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,8 +77,12 @@ WSGI_APPLICATION = 'gestao_zipexpress.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "gestao_zipexpress",
+        'USER': "root",
+        'PASSWORD': "root",
+        'HOST': "127.0.0.1",
+        'PORT': "3306",
     }
 }
 
